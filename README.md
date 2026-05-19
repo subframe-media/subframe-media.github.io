@@ -37,6 +37,96 @@ If something looks broken after a change, the [Actions tab](https://github.com/s
 
 ---
 
+## File formats: what's a `.yml` and what's a `.md`?
+
+Two plain-text formats do most of the work here. You can edit both in any text editor — TextEdit, VS Code, github.com itself, even Notes (just make sure it's plain text, not "rich text").
+
+### YAML files (`.yml`) — for structured data
+
+YAML is a way of writing lists and labelled fields in plain text. The video gallery, team bios, and nav menu all live in `.yml` files under `_data/`.
+
+The format looks like this:
+
+```yaml
+- title: "First item"
+  year: 2026
+  featured: true
+
+- title: "Second item"
+  year: 2025
+```
+
+Three rules cover 95% of YAML:
+
+1. **Indent with spaces, not tabs.** Two spaces per level. A stray tab will break the build — most editors handle this automatically, but watch for it if you're copy-pasting.
+2. **A `-` starts a new list item.** Everything indented under it belongs to that item.
+3. **Put text in double quotes**, especially if it contains a colon, apostrophe, or any punctuation. `title: "Louis XIII @ Harrods"` is safe; `title: Louis XIII: a story` would break because the second colon confuses YAML.
+
+A few extras worth knowing:
+
+- **`true` / `false`** are special — don't quote them (`featured: true`, not `featured: "true"`).
+- **Numbers** are written without quotes (`year: 2026`). Vimeo IDs are an exception — we keep them in quotes (`id: "225766554"`) so YAML treats them as a string.
+- **Long blurbs** that wrap across lines: start them with `>-` like this:
+  ```yaml
+  bio: >-
+    A multi-line bio. Indent every line the same amount.
+    Line breaks here become spaces in the final output.
+  ```
+- **Comments** start with `#` and are ignored. Use them to leave notes for your future self.
+
+Helpful links:
+- [Learn YAML in Y minutes](https://learnxinyminutes.com/docs/yaml/) — short cheat-sheet
+- [YAML Multiline Strings](https://yaml-multiline.info/) — the one thing that always confuses people
+- [YAMLLint](https://www.yamllint.com/) — paste your file in, get told what's wrong (handy when GitHub's build fails and you can't see why)
+
+### Markdown files (`.md`) — for prose pages
+
+Markdown is a lightweight way to write formatted text. The *About* and *Contact* pages (`about.md`, `contact.md`) are Markdown.
+
+The basics:
+
+```markdown
+# Big heading
+## Medium heading
+### Small heading
+
+A normal paragraph. Leave a blank line between paragraphs.
+
+*italic* and **bold** and [a link](https://example.com).
+
+- A bulleted list
+- Another bullet
+  - Indented sub-bullet
+
+1. A numbered list
+2. Second item
+
+![Alt text for an image](/assets/img/my-photo.jpg)
+```
+
+Helpful links:
+- [Markdown Guide — Basic Syntax](https://www.markdownguide.org/basic-syntax/) — the friendliest reference
+- [CommonMark spec](https://commonmark.org/help/) — official, with a side-by-side preview
+- [Dillinger](https://dillinger.io/) — paste-and-preview editor in the browser
+
+### Front matter (the bit at the top between `---` lines)
+
+Every `.md` page starts with a small block of YAML between two `---` lines. That's called *front matter* and tells Jekyll what the page is:
+
+```yaml
+---
+layout: page
+title: Who We Are
+permalink: /about/
+eyebrow: About
+lede: From initial concept to final edit, we take care of every phase of video production.
+---
+```
+
+So Markdown pages are actually a mix: a tiny chunk of YAML at the top (settings), then Markdown below (the content). The same indentation/quoting rules from the YAML section apply inside the front matter.
+
+---
+
 ## Common tasks
 
 ### Add a new video
