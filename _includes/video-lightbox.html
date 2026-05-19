@@ -1,0 +1,20 @@
+<div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+  <div class="lightbox__backdrop" data-lightbox-close></div>
+
+  <div class="lightbox__panel" data-lightbox-panel>
+    <button class="lightbox__close" type="button" aria-label="Close" data-lightbox-close>
+      <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="lightbox__stage" data-lightbox-stage>
+      <!-- iframe injected here on open, removed on close -->
+    </div>
+
+    <div class="lightbox__meta">
+      <h2 id="lightbox-title" class="lightbox__title" data-lightbox-title></h2>
+      <p class="lightbox__desc" data-lightbox-desc></p>
+    </div>
+  </div>
+</div>

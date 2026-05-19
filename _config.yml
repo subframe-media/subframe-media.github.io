@@ -1,0 +1,42 @@
+title: Subframe Media
+tagline: From initial concept to final edit, we take care of every phase of video production.
+description: >-
+  Subframe Media is a London-based video production team led by Nicola Cavalazzi
+  and Fred Portelli. Documentary, commercial, and music film work.
+url: https://subframe.media
+baseurl: ""
+
+author:
+  name: Subframe Media
+  email: info@subframe.media
+
+# build
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+timezone: Europe/London
+
+sass:
+  style: compressed
+  sass_dir: _sass
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-include-cache
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - bin/
+  - vendor/
+  - node_modules/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

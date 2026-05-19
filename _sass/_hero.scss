@@ -1,0 +1,127 @@
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--bg);
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  // cover-fit a 16:9 iframe inside an arbitrary viewport
+  width: max(100%, 177.78vh);   // 16/9 ratio
+  height: max(100%, 56.25vw);   // 9/16 ratio
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: 0;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(10,10,10,0.7), transparent 60%),
+    linear-gradient(to bottom, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0) 35%, rgba(10,10,10,0.65) 100%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 clamp(1.25rem, 5vw, 3rem) clamp(2rem, 6vw, 4.5rem);
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.hero__eyebrow {
+  font-family: var(--ff-display);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  font-size: var(--fs-100);
+  color: var(--fg);
+  margin-bottom: var(--sp-4);
+  opacity: 0.85;
+}
+
+.hero__title {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: var(--fs-900);
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  max-width: 14ch;
+  color: var(--fg);
+  text-shadow: 0 2px 24px rgba(0,0,0,0.4);
+}
+
+.hero__tagline {
+  margin-top: var(--sp-5);
+  max-width: 44ch;
+  font-size: var(--fs-400);
+  color: var(--fg);
+  opacity: 0.85;
+}
+
+.hero__cta {
+  margin-top: var(--sp-6);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--ff-display);
+  font-size: var(--fs-200);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg);
+  padding: 0.85rem 1.5rem;
+  border: 1px solid var(--fg);
+  border-radius: 999px;
+  align-self: flex-start;
+  transition: background var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+
+  &:hover {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+  }
+
+  svg { width: 14px; height: 14px; }
+}
+
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  color: var(--fg);
+  opacity: 0.65;
+  font-family: var(--ff-display);
+  letter-spacing: var(--tracking-eyebrow);
+  font-size: var(--fs-100);
+  text-transform: uppercase;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::after {
+    content: "";
+    width: 1px;
+    height: 32px;
+    background: currentColor;
+    animation: scroll-line 2s var(--ease-in-out) infinite;
+    transform-origin: top;
+  }
+}
+
+@keyframes scroll-line {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+  50%      { transform: scaleY(1);   opacity: 1; }
+}

@@ -1,0 +1,19 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-mark">Subframe Media</span>
+      <span class="footer-tag">{{ site.tagline }}</span>
+    </div>
+
+    <div class="footer-meta">
+      <a href="mailto:{{ site.data.site_meta.email }}">{{ site.data.site_meta.email }}</a>
+      <ul class="footer-social">
+        {% for link in site.data.site_meta.social %}
+          <li><a href="{{ link.url }}" rel="noopener" target="_blank">{{ link.handle }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-copy">© {{ 'now' | date: '%Y' }} Subframe Media</div>
+  </div>
+</footer>

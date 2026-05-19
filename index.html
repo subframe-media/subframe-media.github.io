@@ -1,0 +1,59 @@
+---
+layout: default
+title: Subframe Media
+description: A London-based video production team. Documentary, commercial, and music film.
+body_class: home
+---
+
+{% assign showreel = site.data.videos | where: "slug", "showreel" | first %}
+
+<section class="hero">
+  <iframe
+    class="hero__video"
+    src="https://player.vimeo.com/video/{{ showreel.id }}?background=1&dnt=1&autopause=0&muted=1&playsinline=1&loop=1"
+    allow="autoplay; picture-in-picture"
+    tabindex="-1"
+    aria-hidden="true"
+    loading="eager"></iframe>
+
+  <div class="hero__scrim"></div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow">Subframe Media — London</p>
+    <h1 class="hero__title">Films, end&nbsp;to&nbsp;end.</h1>
+    <p class="hero__tagline">{{ site.tagline }}</p>
+    <a class="hero__cta" href="{{ '/work/' | relative_url }}">
+      See the work
+      <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+        <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <span class="hero__scroll" aria-hidden="true">Scroll</span>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="reveal" style="margin-bottom: var(--sp-6);">
+      <p class="section-eyebrow">Featured Work</p>
+      <h2 style="max-width: 22ch;">A few films we&rsquo;re proud of.</h2>
+    </header>
+
+    {% assign featured = site.data.videos | where: "featured", true %}
+    <div class="video-grid video-grid--featured">
+      {% for video in featured %}
+        {% if video.slug == "showreel" %}{% continue %}{% endif %}
+        <div class="reveal" style="transition-delay: {{ forloop.index0 | times: 60 }}ms;">
+          {% include video-card.html video=video %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <p class="reveal" style="margin-top: var(--sp-7); text-align: center;">
+      <a href="{{ '/work/' | relative_url }}" style="font-family: var(--ff-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: var(--fs-200); border-bottom: 1px solid currentColor; padding-bottom: 0.3rem;">
+        View all work
+      </a>
+    </p>
+  </div>
+</section>

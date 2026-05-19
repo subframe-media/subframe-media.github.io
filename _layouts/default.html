@@ -1,0 +1,17 @@
+{% include head.html %}
+
+<body class="page page--{{ page.body_class | default: 'default' }}" data-page="{{ page.url | replace: '/', '_' | default: 'home' }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  {% include nav.html %}
+
+  <main id="main" class="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+  {% include video-lightbox.html %}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

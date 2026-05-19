@@ -1,0 +1,28 @@
+<header class="site-header" data-site-header>
+  <a class="brand" href="{{ '/' | relative_url }}" aria-label="Subframe Media — home">
+    <img src="{{ '/assets/img/logo-white.png' | relative_url }}" alt="Subframe Media">
+  </a>
+
+  <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="visually-hidden">Menu</span>
+  </button>
+
+  <nav id="site-nav" class="site-nav" aria-label="Primary">
+    <ul>
+      {% for item in site.data.nav %}
+        {% assign current = false %}
+        {% if item.url == "/" and page.url == "/" %}
+          {% assign current = true %}
+        {% elsif item.url != "/" and page.url contains item.url %}
+          {% assign current = true %}
+        {% endif %}
+        <li>
+          <a href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

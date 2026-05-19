@@ -1,0 +1,55 @@
+{%- comment -%}
+  video-card.html — facade for a single Vimeo video.
+  Param: include.video (a record from site.data.videos)
+
+  Initial state: poster image (or stylized fallback when no thumbnail file exists).
+  On hover (pointer:fine), JS swaps in an <iframe> with ?background=1 for a silent loop.
+  On click, JS opens the shared lightbox with the full player.
+{%- endcomment -%}
+
+{%- assign v = include.video -%}
+{%- assign thumb_path = '/assets/img/thumbs/' | append: v.id | append: '.jpg' -%}
+{%- assign thumb_exists = false -%}
+{%- for f in site.static_files -%}
+  {%- if f.path == thumb_path -%}{%- assign thumb_exists = true -%}{%- endif -%}
+{%- endfor -%}
+{%- assign aspect = v.aspect | default: '16:9' -%}
+
+<article
+  class="video-card video-card--{{ aspect | replace: ':', '-' }}{% unless thumb_exists %} video-card--no-thumb{% endunless %}"
+  data-video-card
+  data-vimeo-id="{{ v.id }}"
+  data-title="{{ v.title | escape }}"
+  data-description="{{ v.description | escape }}"
+  data-slug="{{ v.slug }}"
+  data-aspect="{{ aspect }}"
+  style="--accent-seed: {{ v.id | slice: -2, 2 }};"
+>
+  <button class="video-card__hit" type="button" aria-label="Play {{ v.title | escape }}">
+    <div class="video-card__media" data-card-media>
+      {% if thumb_exists %}
+        <img
+          class="video-card__poster"
+          src="{{ thumb_path | relative_url }}"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          width="1280"
+          height="720">
+      {% else %}
+        <div class="video-card__poster video-card__poster--generated" aria-hidden="true">
+          <span class="video-card__mark">{{ v.title | slice: 0, 2 | upcase }}</span>
+        </div>
+      {% endif %}
+      <span class="video-card__play" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </div>
+
+    <div class="video-card__caption">
+      <h3 class="video-card__title">{{ v.title }}</h3>
+      {% if v.client %}<p class="video-card__client">{{ v.client }}</p>{% endif %}
+      <p class="video-card__desc">{{ v.description }}</p>
+    </div>
+  </button>
+</article>

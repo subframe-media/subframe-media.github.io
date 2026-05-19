@@ -1,0 +1,8 @@
+- label: "Showreel"
+  url: "/"
+- label: "Work"
+  url: "/work/"
+- label: "Who We Are"
+  url: "/about/"
+- label: "Contact"
+  url: "/contact/"

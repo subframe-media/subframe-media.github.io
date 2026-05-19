@@ -1,0 +1,145 @@
+# Subframe Media — video gallery
+# Edit this file to add, remove, or update videos.
+# After adding a new entry, run `bin/fetch-thumbs.sh` to download its poster.
+#
+# fields:
+#   id           — Vimeo numeric id (string)             required
+#   slug         — kebab-case identifier                 required
+#   title        — display title                         required
+#   description  — short blurb under the title           required
+#   category     — showreel | commercial | documentary | music-video
+#   year         — release year                          optional
+#   featured     — true to surface on home page          optional
+#   aspect       — "16:9" (default) | "9:16"             optional
+#   client       — client name shown beneath title       optional
+#   role         — credits line e.g. "Director, DP"      optional
+
+- id: "225847697"
+  slug: "showreel"
+  title: "Showreel"
+  description: "A selection of recent commercial and documentary work."
+  category: "showreel"
+  year: 2017
+  featured: true
+
+- id: "225768259"
+  slug: "jiu-jitsu-journey"
+  title: "Jiu Jitsu Journey"
+  description: "The story of Brazilian Jiu-Jitsu in Italy and beyond — sponsored by UIJJ."
+  category: "documentary"
+  year: 2017
+  featured: true
+
+- id: "225767866"
+  slug: "italian-bjj-open-2017"
+  title: "Italian BJJ Open 2017"
+  description: "Review of the most important Brazilian Jiu-Jitsu tournament in Italy."
+  category: "documentary"
+  year: 2017
+
+- id: "225766554"
+  slug: "novikov"
+  title: "Novikov"
+  description: "The Louis XIII “serving experience” for Novikov Bar and Restaurant in London, UK."
+  category: "commercial"
+  client: "Louis XIII"
+  year: 2017
+  featured: true
+
+- id: "225766144"
+  slug: "louis-xiii-harrods"
+  title: "Louis XIII @ Harrods"
+  description: "Introducing the Louis XIII pop-up store at Harrods."
+  category: "commercial"
+  client: "Louis XIII"
+  year: 2017
+
+- id: "225769509"
+  slug: "louis-xiii-burlington-arcade"
+  title: "Louis XIII @ Burlington Arcade"
+  description: "Presentation of the Louis XIII pop-up store at Burlington Arcade in London, UK."
+  category: "commercial"
+  client: "Louis XIII"
+  year: 2017
+
+- id: "225766123"
+  slug: "model5"
+  title: "Model5"
+  description: "The building of GENESI: a new concept car by MODEL5, epitome of the Made in Italy car design."
+  category: "commercial"
+  client: "MODEL5"
+  year: 2017
+  featured: true
+
+- id: "225767265"
+  slug: "berlin-atonal-2015"
+  title: "Berlin Atonal 2015"
+  description: "Coverage of the experimental music and visual arts festival held in the former Kraftwerk Berlin."
+  category: "documentary"
+  year: 2015
+  featured: true
+
+- id: "225766897"
+  slug: "sonar-reykjavik-2017"
+  title: "Sonar Reykjavik 2017"
+  description: "Inside the Icelandic edition of the legendary Sónar festival."
+  category: "documentary"
+  year: 2017
+
+- id: "225766600"
+  slug: "otto-d-ambra"
+  title: "Otto D'Ambra"
+  description: "A portrait of London-based tattoo artist Otto D'Ambra."
+  category: "documentary"
+  year: 2017
+
+- id: "225770905"
+  slug: "marcel-dettmann"
+  title: "Marcel Dettmann"
+  description: "Behind the decks with Berghain resident Marcel Dettmann."
+  category: "music-video"
+  year: 2017
+
+- id: "225766392"
+  slug: "techno-art-abdul-haqq"
+  title: "Techno Art with Abdul Haqq"
+  description: "Detroit techno illustrator Abdul Haqq talks about his craft and the scene that raised it."
+  category: "documentary"
+  year: 2017
+
+- id: "225766143"
+  slug: "support-david-linear"
+  title: "Support David — Linear"
+  description: "Promo film for the Support David clothing label's Linear collection."
+  category: "commercial"
+  client: "Support David"
+  year: 2017
+
+- id: "225766256"
+  slug: "art-sablon-2017"
+  title: "Art Sablon 2017"
+  description: "Coverage of the Art Sablon contemporary art fair in Brussels."
+  category: "documentary"
+  year: 2017
+
+- id: "225769228"
+  slug: "play-me"
+  title: "Play Me"
+  description: "A short narrative piece exploring memory, music, and place."
+  category: "documentary"
+  year: 2017
+
+- id: "225768246"
+  slug: "luce"
+  title: "Luce"
+  description: "A study of light — atmospheric short film."
+  category: "documentary"
+  year: 2017
+
+- id: "225770217"
+  slug: "lendlease"
+  title: "Lendlease"
+  description: "Brand film for global property and infrastructure group Lendlease."
+  category: "commercial"
+  client: "Lendlease"
+  year: 2017

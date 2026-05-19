@@ -1,0 +1,23 @@
+- name: "Nicola Cavalazzi"
+  handle: "il_nikkk"
+  role: "Producer / Director of Photography"
+  location: "London, UK"
+  bio: >-
+    Italian-born, London-based producer and DP. Nicola has shot documentary
+    and commercial work across Europe, with a focus on long-form portraits
+    and brand films that prioritise atmosphere over artifice.
+  links:
+    instagram: "https://instagram.com/il_nikkk"
+  photo: "/assets/img/team/nicola.jpg"
+
+- name: "Fred Portelli"
+  handle: "fredportelliuk"
+  role: "Creative Director / Music / Photography"
+  location: "London, UK"
+  bio: >-
+    Multidisciplinary creative working across motion, sound and stills.
+    Fred shapes the visual and sonic language of Subframe projects from
+    treatment through delivery.
+  links:
+    instagram: "https://instagram.com/fredportelliuk"
+  photo: "/assets/img/team/fred.jpg"

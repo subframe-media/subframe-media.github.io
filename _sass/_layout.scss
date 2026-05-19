@@ -1,0 +1,61 @@
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: var(--container-narrow);
+  margin-inline: auto;
+}
+
+.page-header {
+  padding: calc(var(--header-h) + var(--sp-9)) 0 var(--sp-7);
+
+  &__inner {
+    width: var(--container);
+    margin-inline: auto;
+  }
+}
+
+.page-body {
+  width: var(--container);
+  margin-inline: auto;
+  padding-bottom: var(--sp-10);
+}
+
+.page-title {
+  font-size: var(--fs-900);
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 18ch;
+}
+
+.section {
+  padding-block: var(--sp-9);
+}
+
+.section--tight {
+  padding-block: var(--sp-7);
+}
+
+.section-eyebrow {
+  font-family: var(--ff-display);
+  font-size: var(--fs-100);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: var(--sp-4);
+}
+
+// fade-up animation primitive (toggled by IntersectionObserver)
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}

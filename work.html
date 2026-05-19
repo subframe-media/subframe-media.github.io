@@ -1,0 +1,18 @@
+---
+layout: page
+title: Work
+permalink: /work/
+eyebrow: Selected projects
+lede: Documentary, commercial, and music films — directed and produced from concept through delivery.
+body_class: work
+---
+
+{% assign portfolio = site.data.videos | where_exp: "v", "v.slug != 'showreel'" %}
+
+<div class="video-grid">
+  {% for video in portfolio %}
+    <div class="reveal" style="transition-delay: {{ forloop.index0 | modulo: 6 | times: 60 }}ms;">
+      {% include video-card.html video=video %}
+    </div>
+  {% endfor %}
+</div>
