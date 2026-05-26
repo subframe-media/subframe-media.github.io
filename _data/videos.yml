@@ -14,6 +14,14 @@
 #   client       — client name shown beneath title       optional
 #   role         — credits line e.g. "Director, DP"      optional
 
+- id: "1172509682"          # Vimeo numeric id, in quotes
+  slug: "new-project"        # kebab-case, used internally
+  title: "Boat reel"
+  description: "We love the ocean."
+  category: "showreel"     # showreel | commercial | documentary | music-video
+  year: 2026
+  featured: true             # remove this line if you don't want it on the home page
+  
 - id: "225847697"
   slug: "showreel"
   title: "Showreel"
